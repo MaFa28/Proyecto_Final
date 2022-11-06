@@ -15,6 +15,12 @@ return new class extends Migration
     {
         Schema::create('mascotas', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('citas_id')->constrained();
+            $table->string('nombre');
+            $table->string('tipomascota');
+            $table->string('raza');
+            $table->string('edad');
+
             $table->timestamps();
         });
     }
