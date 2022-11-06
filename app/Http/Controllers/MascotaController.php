@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Mascota;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MascotaController extends Controller
 {
@@ -15,6 +16,9 @@ class MascotaController extends Controller
     public function index()
     {
         //
+        //$mascotas = Auth::user()->citas;
+        $mascotas = Mascota::all();
+        return view('inicio',compact('mascotas'));
     }
 
     /**
@@ -25,6 +29,7 @@ class MascotaController extends Controller
     public function create()
     {
         //
+        return view('vistasmascota.mascotas');
     }
 
     /**
@@ -36,6 +41,19 @@ class MascotaController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'nombre' => 'required|max:255',
+            'correo' => 'required',
+            'telefono' => 'required|max:20',
+            'tipomascota' => 'required|max:20|min:3',
+            'raza' => 'required|max:20|min:3',
+            'comentario' => 'required',
+        ]);
+
+        //$request->merge(['user_id' => Auth::id()]);
+        Mascota::create($request->all());
+
+        return redirect('/mascotas');
     }
 
     /**
@@ -47,6 +65,7 @@ class MascotaController extends Controller
     public function show(Mascota $mascota)
     {
         //
+        return view('vistasmascota.mascotasShow',compact('mascota'));
     }
 
     /**
@@ -58,6 +77,8 @@ class MascotaController extends Controller
     public function edit(Mascota $mascota)
     {
         //
+        return view('vistasmascota.mascotasEdit',compact('mascota'));
+
     }
 
     /**
@@ -70,6 +91,18 @@ class MascotaController extends Controller
     public function update(Request $request, Mascota $mascota)
     {
         //
+        $request->validate([
+            'nombre' => 'required|max:255',
+            'correo' => 'required',
+            'telefono' => 'required|max:20',
+            'tipomascota' => 'required|max:20|min:3',
+            'raza' => 'required|max:20|min:3',
+            'comentario' => 'required',
+        ]);
+
+        Mascota::where('id', $mascota->id)->update($request->except('_token','_method'));
+
+        return redirect('/mascotas');
     }
 
     /**
@@ -81,5 +114,7 @@ class MascotaController extends Controller
     public function destroy(Mascota $mascota)
     {
         //
+        $mascota->delete();
+        return redirect('/mascotas');
     }
 }

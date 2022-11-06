@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cita;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CitaController extends Controller
 {
@@ -14,7 +15,9 @@ class CitaController extends Controller
      */
     public function index()
     {
-        //
+        //$citas = Auth::user()->citas;
+        $citas = Cita::all();
+        return view('inicio',compact('citas'));
     }
 
     /**
@@ -25,6 +28,7 @@ class CitaController extends Controller
     public function create()
     {
         //
+        return view('vistascitas.citas');
     }
 
     /**
@@ -36,6 +40,19 @@ class CitaController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'nombre' => 'required|max:255',
+            'correo' => 'required',
+            'telefono' => 'required|max:20',
+            'tipomascota' => 'required|max:20|min:3',
+            'raza' => 'required|max:20|min:3',
+            'comentario' => 'required',
+        ]);
+
+        //$request->merge(['user_id' => Auth::id()]);
+        Cita::create($request->all());
+
+        return redirect('/citas');
     }
 
     /**
@@ -47,6 +64,7 @@ class CitaController extends Controller
     public function show(Cita $cita)
     {
         //
+        return view('vistascitas.citasShow',compact('cita'));
     }
 
     /**
@@ -58,6 +76,7 @@ class CitaController extends Controller
     public function edit(Cita $cita)
     {
         //
+        return view('vistascitas.citasEdit',compact('cita'));
     }
 
     /**
@@ -70,6 +89,18 @@ class CitaController extends Controller
     public function update(Request $request, Cita $cita)
     {
         //
+        $request->validate([
+            'nombre' => 'required|max:255',
+            'correo' => 'required',
+            'telefono' => 'required|max:20',
+            'tipomascota' => 'required|max:20|min:3',
+            'raza' => 'required|max:20|min:3',
+            'comentario' => 'required',
+        ]);
+
+        Cita::where('id', $cita->id)->update($request->except('_token','_method'));
+
+        return redirect('/citas');
     }
 
     /**
@@ -81,5 +112,7 @@ class CitaController extends Controller
     public function destroy(Cita $cita)
     {
         //
+        $cita->delete();
+        return redirect('/citas');
     }
 }
