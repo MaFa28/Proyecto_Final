@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CitaController;
+use App\Http\Controllers\MascotaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +18,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+///Rutas
+Route::resource('citas', CitaController::class);//->middleware('auth');
+Route::resource('mascotas', MascotaController::class);
 
 Route::middleware([
     'auth:sanctum',
