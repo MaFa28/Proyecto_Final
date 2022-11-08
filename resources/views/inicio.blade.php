@@ -12,7 +12,7 @@
 
 
     <!--Navbar-->
-    <nav class="navbar navbar-expand-sm navbar-dark bg-danger">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand " href="#">
                 <img src="/imagenes/logogato.jpg" alt="gato" width="50">
@@ -29,9 +29,9 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ">
-                    <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Crear Cita</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Nueva Mascota</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/citas/create">Crear Cita</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/mascotas/create">Nueva Mascota</a></li>
                 </ul>
             </div>
 
