@@ -18,7 +18,7 @@ class MascotaController extends Controller
         //
         //$mascotas = Auth::user()->citas;
         $mascotas = Mascota::all();
-        return view('inicio',compact('mascotas'));
+        return view('vistasmascota.index',compact('mascotas'));
     }
 
     /**

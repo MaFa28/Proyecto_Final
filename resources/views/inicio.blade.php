@@ -9,17 +9,52 @@
 </head>
 <body>
 
-    <h1>Hongo</h1>
 
-    <button type="button" class="btn btn-primary">Primary</button>
-    <button type="button" class="btn btn-secondary">Secondary</button>
-    <button type="button" class="btn btn-success">Success</button>
-    <button type="button" class="btn btn-danger">Danger</button>
-    <button type="button" class="btn btn-warning">Warning</button>
-    <button type="button" class="btn btn-info">Info</button>
-    <button type="button" class="btn btn-light">Light</button>
-    <button type="button" class="btn btn-dark">Dark</button>
 
-    <button type="button" class="btn btn-link">Link</button>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-sm navbar-dark bg-danger">
+        <div class="container-fluid">
+            <a class="navbar-brand " href="#">
+                <img src="/imagenes/logogato.jpg" alt="gato" width="50">
+            </a>
+
+            <button class="navbar-toggler "
+                type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toogle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ">
+                    <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Crear Cita</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Nueva Mascota</a></li>
+                </ul>
+            </div>
+
+
+        </div>
+    </nav>
+
+    <!--Carrusel-->
+    <div class="carousel slide" id="mainSlider" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img  src="/imagenes/mascotas1.jpg" class="d-block" w-100 alt="">
+            </div>
+            <div class="carousel-item">
+                <img  src="/imagenes/gato.jpg" class="d-block" w-100 alt="">
+            </div>
+            <div class="carousel-item">
+                <img  src="/imagenes/perro1.jpg" class="d-block" w-100 alt="">
+            </div>
+        </div>
+
+    </div>
+
+
 </body>
 </html>

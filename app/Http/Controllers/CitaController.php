@@ -17,7 +17,7 @@ class CitaController extends Controller
     {
         //$citas = Auth::user()->citas;
         $citas = Cita::all();
-        return view('inicio',compact('citas'));
+        return view('vistascitas.index',compact('citas'));
     }
 
     /**

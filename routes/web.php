@@ -19,6 +19,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/inicio', function (){
+    return view('inicio');
+});
 ///Rutas
 Route::resource('citas', CitaController::class);//->middleware('auth');
 Route::resource('mascotas', MascotaController::class);
