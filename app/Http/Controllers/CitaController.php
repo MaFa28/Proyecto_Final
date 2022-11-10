@@ -21,8 +21,8 @@ class CitaController extends Controller
      */
     public function index()
     {
-        //$citas = Auth::user()->citas;
-        $citas = Cita::all();
+        $citas = Auth::user()->citas;
+        //$citas = Cita::all();
         return view('vistascitas.index',compact('citas'));
     }
 
