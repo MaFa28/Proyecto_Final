@@ -28,7 +28,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ">
                     <li class="nav-item"><a class="nav-link" href="/inicio">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Crear Cita</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/citas/create">Crear Cita</a></li>
                     <li class="nav-item"><a class="nav-link" href="/mascotas/create">Nueva Mascota</a></li>
                 </ul>
             </div>

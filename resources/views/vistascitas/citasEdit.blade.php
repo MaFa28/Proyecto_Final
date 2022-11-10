@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite(['resources/css/bootstrap.min.css', 'resources/js/bootstrap.min.js'])
-    <title>Document</title>
+    <title>Editar</title>
 </head>
 <body>
     <!--Navbar-->
@@ -27,7 +27,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ">
                     <li class="nav-item"><a class="nav-link" href="/inicio">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Crear Cita</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/cita/create">Crear Cita</a></li>
                     <li class="nav-item"><a class="nav-link" href="/mascotas/create">Nueva Mascota</a></li>
                 </ul>
             </div>
