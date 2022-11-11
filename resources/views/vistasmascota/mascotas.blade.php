@@ -48,7 +48,7 @@
 
                 <div class="mb-3">
                     <label for="tipomascota" class="form-label">Tipo de Mascota:</label>
-                    <input type="text" name="tipomascota" class="form-control" id="Mascota" value="{{ old('mascota') }}">
+                    <input type="text" name="tipomascota" class="form-control" id="Mascota" value="{{ old('tipomascota') }}">
 
                 </div>
                 @error('tipomascota')

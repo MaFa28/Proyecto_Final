@@ -88,7 +88,15 @@
                     @error('comentario')
                         <i>{{ $message }}</
                     @enderror
-                            <br>
+
+                    <div class="mb-3">
+                            <select name="mascota_id" id="">
+                                @foreach ($mascotas as $mascota)
+                                     <option value="{{ $mascota->id }}">{{ $mascota->nombre }}</option>
+                                @endforeach
+                            </select>
+                    </div>
+                    <br>
                     <div class="col-12">
                         <button type="submit" class="btn btn-primary">Enviar</button>
                     </div>

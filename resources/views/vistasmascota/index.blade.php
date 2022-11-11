@@ -35,5 +35,49 @@
     </div>
     </nav>
 
+    <h2>Listado de Mascotas</h2><br>
+
+    <div class="table-responsive-xxl">
+        <table class="table table-striped">
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Tipo de Mascota</th>
+                <th>Raza</th>
+                <th>Edad</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
+            </tr>
+            @foreach ($mascotas as $mascota)
+                <tr>
+                    <td>
+                        <a href="/mascotas/{{ $mascota->id }}">
+                        {{ $mascota->id }}
+                        </a>
+                    </td>
+
+                    <td>{{ $mascota->nombre }}</td>
+                    <td>{{ $mascota->tipomascota }}</td>
+                    <td>{{ $mascota->raza }}</td>
+                    <td>{{ $mascota->edad }}</td>
+
+                    <td>
+                        <a href="/mascotas/{{ $mascota->id }}/edit">Editar</a>
+                    </td>
+
+                    <td>
+
+                        <form action="/mascotas/{{ $mascota->id }}" method='POST'>
+                            @csrf
+                            @method('DELETE')
+                            <input type="submit" value="Eliminar">
+                        </form>
+
+                    </td>
+                </tr>
+            @endforeach
+        </table>
+    </div>
+
 </body>
 </html>

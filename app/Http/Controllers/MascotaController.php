@@ -47,11 +47,9 @@ class MascotaController extends Controller
         //
         $request->validate([
             'nombre' => 'required|max:255',
-            'correo' => 'required',
-            'telefono' => 'required|max:20',
             'tipomascota' => 'required|max:20|min:3',
             'raza' => 'required|max:20|min:3',
-            'comentario' => 'required',
+            'edad' => 'required',
         ]);
 
         //$request->merge(['user_id' => Auth::id()]);
@@ -97,11 +95,9 @@ class MascotaController extends Controller
         //
         $request->validate([
             'nombre' => 'required|max:255',
-            'correo' => 'required',
-            'telefono' => 'required|max:20',
             'tipomascota' => 'required|max:20|min:3',
             'raza' => 'required|max:20|min:3',
-            'comentario' => 'required',
+            'edad' => 'required',
         ]);
 
         Mascota::where('id', $mascota->id)->update($request->except('_token','_method'));

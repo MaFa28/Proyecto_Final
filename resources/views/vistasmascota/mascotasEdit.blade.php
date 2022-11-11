@@ -50,7 +50,7 @@
 
             <div class="mb-3">
                 <label for="tipomascota" class="form-label">Tipo de Mascota:</label>
-                <input type="text" name="tipomascota" class="form-control" id="Mascota" value="{{ old( $mascota->mascota) }}">
+                <input type="text" name="tipomascota" class="form-control" id="Mascota" value="{{ $mascota->tipomascota }}">
 
             </div>
             @error('tipomascota')
@@ -59,7 +59,7 @@
 
             <div class="mb-3">
                 <label for="raza" class="form-label">Raza:</label>
-                <input type="text" name="raza" class="form-control" id="Raza" value="{{ old($mascota->raza) }}">
+                <input type="text" name="raza" class="form-control" id="Raza" value="{{ $mascota->raza }}">
 
             </div>
             @error('raza')
@@ -68,7 +68,7 @@
 
             <div class="mb-3">
                 <label for="edad" class="form-label">Edad:</label>
-                <input type="text" name="edad" class="form-control" id="Edad" value="{{ old($mascota->edad) }}">
+                <input type="text" name="edad" class="form-control" id="Edad" value="{{ $mascota->edad }}">
 
             </div>
             @error('edad')

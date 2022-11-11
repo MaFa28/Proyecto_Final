@@ -38,6 +38,15 @@
     <h1>Detalles de la cita</h1>
 
         <h2>{{ $cita->nombre }}</h2>
+        <p>
+            {{ $cita->tipomascota }}
+        </p>
+
+        <ol>
+            @foreach ($cita->mascotas as $mascota)
+                <li>{{$mascota->nombre }}</li>
+            @endforeach
+        </ol>
 
         <a href="/citas">Regresar</a>
 

@@ -29,7 +29,6 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ">
-                    <li class="nav-item"><a class="nav-link" href="/inicio">Inicio</a></li>
                     <li class="nav-item"><a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline nav-link">Login</a></li>
                     <li class="nav-item"><a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline nav-link">Register</a></li>
                 </ul>

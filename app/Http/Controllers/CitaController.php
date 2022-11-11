@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cita;
+use App\Models\Mascota;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -34,7 +35,8 @@ class CitaController extends Controller
     public function create()
     {
         //
-        return view('vistascitas.citas');
+        $mascotas = Mascota::all();
+        return view('vistascitas.citas', compact('mascotas'));
     }
 
     /**
@@ -56,7 +58,9 @@ class CitaController extends Controller
         ]);
 
         $request->merge(['user_id' => Auth::id()]);
-        Cita::create($request->all());
+        $cita=Cita::create($request->all());
+
+        $cita->mascotas()->attach($request->mascota_id);
 
         return redirect('/citas');
     }
