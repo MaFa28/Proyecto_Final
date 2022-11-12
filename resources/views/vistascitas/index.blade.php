@@ -12,7 +12,7 @@
     <!--Navbar-->
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand " href="/inicio">
+            <a class="navbar-brand " href="/citas">
                 <img src="/imagenes/logogato.jpg" alt="gato" width="50">
             </a>
 
@@ -27,7 +27,7 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ">
-                    <li class="nav-item"><a class="nav-link" href="/inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/dashboard">Perfil</a></li>
                     <li class="nav-item"><a class="nav-link" href="/citas/create">Crear Cita</a></li>
                     <li class="nav-item"><a class="nav-link" href="/mascotas/create">Nueva Mascota</a></li>
                 </ul>
@@ -35,56 +35,63 @@
         </div>
         </nav>
 
+        <figure class="text-center">
+            <blockquote class="blockquote">
+                <p>Listado de Citas</p>
+            </blockquote>
 
-        <h2>Citas Actuales</h2><br>
+        </figure>
 
-        <div class="table-responsive-xxl">
-            <table class="table table-striped">
-                <tr>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Usuario</th>
-                    <th>Correo</th>
-                    <th>Telefono</th>
-                    <th>Tipo de Mascota</th>
-                    <th>Raza</th>
-                    <th>Comentario</th>
-                    <th>Editar</th>
-                    <th>Eliminar</th>
-                </tr>
-                @foreach ($citas as $cita)
+
+        <div class="container">
+
+            <div class="table-responsive-sm">
+                <table class="table table-striped">
                     <tr>
-                        <td>
-                            <a href="/citas/{{ $cita->id }}">
-                            {{ $cita->id }}
-                            </a>
-                        </td>
-
-                        <td>{{ $cita->nombre }}</td>
-                        <td>{{ $cita->user->name }}</td>
-                        <td>{{ $cita->correo }}</td>
-                        <td>{{ $cita->telefono }}</td>
-                        <td>{{ $cita->tipomascota }}</td>
-                        <td>{{ $cita->raza }}</td>
-                        <td>{{ $cita->comentario }}</td>
-
-                        <td>
-                            <a class="btn btn-primary" href="/citas/{{ $cita->id }}/edit">Editar</a>
-                        </td>
-
-                        <td>
-
-                            <form action="/citas/{{ $cita->id }}" method='POST'>
-                                @csrf
-                                @method('DELETE')
-                                <input class="btn btn-danger" type="submit" value="Eliminar">
-                            </form>
-
-                        </td>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Usuario</th>
+                        <th>Tipo de Mascota</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
                     </tr>
-                @endforeach
-            </table>
+                    @foreach ($citas as $cita)
+                        <tr>
+                            <td>
+                                <a href="/citas/{{ $cita->id }}">
+                                {{ $cita->id }}
+                                </a>
+                            </td>
+
+                            <td>{{ $cita->nombre }}</td>
+                            <td>{{ $cita->user->name }}</td>
+                            <!--<td>{{ $cita->correo }}</td>-->
+                            <!--<td>{{ $cita->telefono }}</td>-->
+                            <td>{{ $cita->tipomascota }}</td>
+                            <!--<td>{{ $cita->raza }}</td>-->
+                            <!--<td>{{ $cita->comentario }}</td>-->
+
+                            <td>
+                                <a class="btn btn-primary" href="/citas/{{ $cita->id }}/edit">Editar</a>
+                            </td>
+
+                            <td>
+
+                                <form action="/citas/{{ $cita->id }}" method='POST'>
+                                    @csrf
+                                    @method('DELETE')
+                                    <input class="btn btn-danger" type="submit" value="Eliminar">
+                                </form>
+
+                            </td>
+                        </tr>
+                    @endforeach
+                </table>
+            </div>
+
         </div>
+
+
 
 </body>
 </html>
