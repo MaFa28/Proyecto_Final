@@ -90,7 +90,7 @@
                     @enderror
 
                     <div class="mb-3">
-                            <select name="mascota_id" id="">
+                            <select class="form-select" aria-label="Default select example" name="mascota_id" id="">
                                 @foreach ($mascotas as $mascota)
                                      <option value="{{ $mascota->id }}">{{ $mascota->nombre }}</option>
                                 @endforeach
@@ -104,6 +104,8 @@
 
 
                 </form>
+
+                
 
             </div>
 

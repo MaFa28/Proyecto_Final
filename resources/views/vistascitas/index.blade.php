@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite(['resources/css/bootstrap.min.css', 'resources/js/bootstrap.min.js'])
-    <title>Document</title>
+    <title>Citas</title>
 </head>
 <body>
 
@@ -36,7 +36,7 @@
         </nav>
 
 
-        <h2>Listado de Citas</h2><br>
+        <h2>Citas Actuales</h2><br>
 
         <div class="table-responsive-xxl">
             <table class="table table-striped">
@@ -69,7 +69,7 @@
                         <td>{{ $cita->comentario }}</td>
 
                         <td>
-                            <a href="/citas/{{ $cita->id }}/edit">Editar</a>
+                            <a class="btn btn-primary" href="/citas/{{ $cita->id }}/edit">Editar</a>
                         </td>
 
                         <td>
@@ -77,7 +77,7 @@
                             <form action="/citas/{{ $cita->id }}" method='POST'>
                                 @csrf
                                 @method('DELETE')
-                                <input type="submit" value="Eliminar">
+                                <input class="btn btn-danger" type="submit" value="Eliminar">
                             </form>
 
                         </td>

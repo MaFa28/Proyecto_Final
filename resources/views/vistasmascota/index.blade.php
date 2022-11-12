@@ -12,7 +12,7 @@
    <!--Navbar-->
    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand " href="/inicio">
+        <a class="navbar-brand " href="/mascotas">
             <img src="/imagenes/logogato.jpg" alt="gato" width="50">
         </a>
 
@@ -27,7 +27,7 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ">
-                <li class="nav-item"><a class="nav-link" href="/inicio">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="/dashboard">Perfil</a></li>
                 <li class="nav-item"><a class="nav-link" href="/citas/create">Crear Cita</a></li>
                 <li class="nav-item"><a class="nav-link" href="/mascotas/create">Nueva Mascota</a></li>
             </ul>
@@ -37,47 +37,45 @@
 
     <h2>Listado de Mascotas</h2><br>
 
-    <div class="table-responsive-xxl">
-        <table class="table table-striped">
-            <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Tipo de Mascota</th>
-                <th>Raza</th>
-                <th>Edad</th>
-                <th>Editar</th>
-                <th>Eliminar</th>
-            </tr>
-            @foreach ($mascotas as $mascota)
+    <div class="container">
+
+        <div class="table-responsive-sm">
+            <table class="table table-striped">
                 <tr>
-                    <td>
-                        <a href="/mascotas/{{ $mascota->id }}">
-                        {{ $mascota->id }}
-                        </a>
-                    </td>
-
-                    <td>{{ $mascota->nombre }}</td>
-                    <td>{{ $mascota->tipomascota }}</td>
-                    <td>{{ $mascota->raza }}</td>
-                    <td>{{ $mascota->edad }}</td>
-
-                    <td>
-                        <a href="/mascotas/{{ $mascota->id }}/edit">Editar</a>
-                    </td>
-
-                    <td>
-
-                        <form action="/mascotas/{{ $mascota->id }}" method='POST'>
-                            @csrf
-                            @method('DELETE')
-                            <input type="submit" value="Eliminar">
-                        </form>
-
-                    </td>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
                 </tr>
-            @endforeach
-        </table>
+                @foreach ($mascotas as $mascota)
+                    <tr>
+                        <td>
+                            <a href="/mascotas/{{ $mascota->id }}">
+                            {{ $mascota->id }}
+                            </a>
+                        </td>
+
+                        <td>{{ $mascota->nombre }}</td>
+                        <td>
+                            <a class="btn btn-primary" href="/mascotas/{{ $mascota->id }}/edit">Editar</a>
+                        </td>
+
+                        <td>
+
+                            <form action="/mascotas/{{ $mascota->id }}" method='POST'>
+                                @csrf
+                                @method('DELETE')
+                                <input class="btn btn-danger" type="submit" value="Eliminar">
+                            </form>
+
+                        </td>
+                    </tr>
+                @endforeach
+            </table>
+        </div>
+
     </div>
+
 
 </body>
 </html>

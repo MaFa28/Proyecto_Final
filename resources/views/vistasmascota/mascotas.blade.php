@@ -12,7 +12,7 @@
     <!--Navbar-->
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand " href="/inicio">
+            <a class="navbar-brand " href="/mascotas">
                 <img src="/imagenes/logogato.jpg" alt="gato" width="50">
             </a>
 
@@ -27,7 +27,7 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ">
-                    <li class="nav-item"><a class="nav-link" href="/inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/dashboard">Perfil</a></li>
                     <li class="nav-item"><a class="nav-link" href="/citas/create">Crear Cita</a></li>
                     <li class="nav-item"><a class="nav-link" href="/mascotas/create">Nueva Mascota</a></li>
                 </ul>
