@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cita;
 use App\Models\Mascota;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -85,12 +86,10 @@ class CitaController extends Controller
      */
     public function edit(Cita $cita)
     {
-        //
+        Gate::authorize('editar-cita', $cita);
         return view('vistascitas.citasEdit',compact('cita'));
     }
-
-    /**
-     * Update the specified resource in storage.
+     /**
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Cita  $cita
@@ -122,6 +121,7 @@ class CitaController extends Controller
     public function destroy(Cita $cita)
     {
         //
+        $this->authorize('delete',$cita);
         $cita->mascotas()->detach();
         $cita->delete();
         return redirect('/citas');
