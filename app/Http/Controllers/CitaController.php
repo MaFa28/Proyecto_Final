@@ -122,6 +122,7 @@ class CitaController extends Controller
     public function destroy(Cita $cita)
     {
         //
+        $cita->mascotas()->detach();
         $cita->delete();
         return redirect('/citas');
     }

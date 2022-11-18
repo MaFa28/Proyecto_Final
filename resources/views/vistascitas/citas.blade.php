@@ -28,11 +28,12 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ">
                     <li class="nav-item"><a class="nav-link" href="/dashboard">Perfil</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/citas/create">Crear Cita</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/citas/create">Crears Cita</a></li>
                     <li class="nav-item"><a class="nav-link" href="/mascotas/create">Nueva Mascota</a></li>
                 </ul>
             </div>
-        </nav>
+        </div>
+    </nav>
 
 
     <!---Form -->
@@ -104,6 +105,8 @@
 
 
                 </form>
+
+
 
 
 

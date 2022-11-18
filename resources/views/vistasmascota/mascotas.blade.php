@@ -32,7 +32,8 @@
                     <li class="nav-item"><a class="nav-link" href="/mascotas/create">Nueva Mascota</a></li>
                 </ul>
             </div>
-        </nav>
+        </div>
+    </nav>
 
 
         <div class="container">
