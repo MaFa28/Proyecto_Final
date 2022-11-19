@@ -20,8 +20,8 @@ class MascotaController extends Controller
     public function index()
     {
         //
-        //$mascotas = Auth::user()->citas;
-        $mascotas = Mascota::all();
+        $mascotas = Auth::user()->citas;
+        //$mascotas = Mascota::all();
         return view('vistasmascota.index',compact('mascotas'));
     }
 
@@ -52,7 +52,7 @@ class MascotaController extends Controller
             'edad' => 'required',
         ]);
 
-        //$request->merge(['user_id' => Auth::id()]);
+        $request->merge(['user_id' => Auth::id()]);
         Mascota::create($request->all());
 
         return redirect('/mascotas');
