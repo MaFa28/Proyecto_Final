@@ -73,7 +73,6 @@
                 @error('edad')
                     <i>{{ $message }}</i>
                 @enderror
-
                 <div class="col-12">
                     <button type="submit" class="btn btn-primary">Enviar</button>
                 </div>
