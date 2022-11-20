@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('mascotas', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
+            $table->foreignId('user_id')->constrained();
             $table->string('tipomascota');
             $table->string('raza');
             $table->string('edad');

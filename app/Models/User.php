@@ -62,4 +62,8 @@ class User extends Authenticatable implements MustVerifyEmail
     public function citas(){
         return $this->hasMany(Cita::class);
     }
+
+    public function mascotas(){
+        return $this->hasMany(Mascota::class);
+    }
 }

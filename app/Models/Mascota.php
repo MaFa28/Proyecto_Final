@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Mascota extends Model
 {
     use HasFactory;
-    protected $fillable = ['nombre','tipomascota', 'raza','edad'];
+    protected $fillable = ['nombre','user_id','tipomascota', 'raza','edad'];
 
     //protected $guarded = [];
     //public $timestamp = false;
