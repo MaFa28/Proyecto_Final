@@ -39,20 +39,50 @@
     </nav>
 
     <!--Carrusel-->
-    <div class="carousel slide" id="mainSlider" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img  src="/imagenes/mascotas1.jpg" class="d-block" w-100 alt="">
+        <div class="carousel slide" id="mainSlider" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img  src="/imagenes/mascotas1.jpg" class="d-block  w-100"  alt="">
+                </div>
+                <div class="carousel-item">
+                    <img  src="/imagenes/gato.jpg" class="d-block  w-100" alt="">
+                </div>
+                <div class="carousel-item">
+                    <img  src="/imagenes/perro1.jpg" class="d-block  w-100"  alt="">
+                </div>
             </div>
-            <div class="carousel-item">
-                <img  src="/imagenes/gato.jpg" class="d-block" w-100 alt="">
-            </div>
-            <div class="carousel-item">
-                <img  src="/imagenes/perro1.jpg" class="d-block" w-100 alt="">
-            </div>
+
         </div>
 
-    </div>
+        <!--Cartas-->
+        <div class="card-group">
+            <div class="card border-success mb-3">
+              <img src="/imagenes/hamster.jpg" class="card-img-top img-fluid" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Cuidado de Hamster</h5>
+                <p class="card-text">Vigila que no haga mucho calor ni le lleguen corrientes de aire. Tampoco debe darle la luz del sol directa.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+            <div class="card border-danger mb-3">
+              <img src="/imagenes/conejo.jpg" class="card-img-top img-fluid" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Cuidado de Conejos</h5>
+                <p class="card-text">Los conejos siempre deben tener a su disposición heno y agua.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+            <div class="card border-dark mb-3">
+              <img src="/imagenes/ave.jpg" class="card-img-top img-fluid" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Cuidado de Aves</h5>
+                <p class="card-text">La ubicación ideal para un pájaro es un entorno silencioso, bien ventilado, con luz natural y vistas al exterior.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+          </div>
+
+
 
 
 </body>
